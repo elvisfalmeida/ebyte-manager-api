@@ -156,16 +156,6 @@ http://seu-servidor/ebyte-manager-api/
 Software proprietário. A compra da licença permite uso em servidores ilimitados do comprador.  
 Revenda e redistribuição são proibidas.
 
-## 👨‍💻 Sobre o Desenvolvedor
-
-**Elvis Almeida**  
-Desenvolvedor Full Stack com mais de 10 anos de experiência  
-Especialista em integrações com WhatsApp  
-
-- 🌐 [ebyte.net.br](https://ebyte.net.br)
-- 📱 [WhatsApp](https://wa.me/5511983978727)
-- 💼 [LinkedIn](https://linkedin.com/in/elvisfalmeida)
-- 🐙 [GitHub](https://github.com/elvisfalmeida)
 
 ---
 
