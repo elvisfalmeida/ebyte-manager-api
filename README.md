@@ -9,7 +9,7 @@
 
 ## 📋 Sobre
 
-O **Ebyte Manager API V1** é uma interface web simples e funcional para gerenciar conexões do WhatsApp através de API. Desenvolvido para usuários finais que precisam conectar suas instâncias e obter tokens para automações.
+O **Ebyte Manager API V1** é uma interface web simples e funcional para gerenciar conexões do WhatsApp através de Evolution API. Desenvolvido para usuários finais que precisam conectar suas instâncias e obter tokens para automações. Como o Manager Oficial da Evolution API não permite o usuário final ver suas Instâncias, criei esse simples.
 
 ## ✨ Funcionalidades
 
@@ -28,13 +28,13 @@ O **Ebyte Manager API V1** é uma interface web simples e funcional para gerenci
 - PHP >= 7.4
 - Servidor Web (Apache/Nginx)
 - Extensão cURL habilitada
-- Acesso à API do WhatsApp
+- Acesso à API da Evolution API WhatsApp
 
 ### Passo a Passo
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/ebyte-manager-api.git
+   git clone https://github.com/elvisfalmeida/ebyte-manager-api.git
    cd ebyte-manager-api
    ```
 
@@ -45,7 +45,7 @@ O **Ebyte Manager API V1** é uma interface web simples e funcional para gerenci
    
    Edite o arquivo `.env` com suas configurações:
    ```env
-   # Configurações da API WhatsApp
+   # Configurações da Evolution API
    API_URL=https://sua-api-whatsapp.com
    API_KEY=sua-api-key-aqui
    
@@ -165,7 +165,7 @@ O sistema se comunica com os seguintes endpoints da API WhatsApp:
 - Verifique os logs em `logs/app.log`
 
 ### Erro ao enviar mensagens
-- Confirme o formato dos números (apenas dígitos)
+- Confirme o formato dos números (apenas dígitos) nesse formato: 5511999998787
 - Verifique se a instância está conectada
 - Veja o console do navegador (F12) para mais detalhes
 
@@ -198,11 +198,11 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ## 👥 Autores
 
-- **Seu Nome** - *Desenvolvimento inicial* - [GitHub](https://github.com/elvisalmeida)
+- **Elvis Almeida** - *Desenvolvimento inicial* - [GitHub](https://github.com/elvisalmeida)
 
 ## 🙏 Agradecimentos
 
-- Equipe da API WhatsApp
+- Equipe da Evolution API
 - Comunidade Bootstrap
 - Todos os contribuidores
 
