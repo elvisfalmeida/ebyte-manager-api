@@ -22,7 +22,19 @@
 
 ## 💡 Por que o Ebyte Manager?
 
-O Manager oficial da Evolution API não permite que o usuário final visualize suas próprias instâncias, tokens e informações importantes. O **Ebyte Manager** resolve esse problema com uma interface simples e completa.
+Se você oferece Evolution API como serviço (SaaS), sabe que o manager oficial 
+tem uma limitação crítica: **só aceita login com API Key global**, dando acesso 
+a TODAS as instâncias do servidor.
+
+O **Ebyte Manager** resolve esse problema permitindo que cada cliente acesse 
+APENAS sua própria instância, usando o token individual.
+
+### Para quem é este produto?
+
+✅ Empresas que oferecem Evolution API como serviço  
+✅ Agências que criam instâncias para clientes  
+✅ Desenvolvedores que precisam dar acesso limitado  
+✅ Qualquer um que precise de multi-tenancy na Evolution AP
 
 ### ✨ Funcionalidades Exclusivas
 
