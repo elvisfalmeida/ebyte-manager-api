@@ -57,9 +57,7 @@ APENAS sua própria instância, usando o token individual.
 ✅ **BÔNUS**: Video tutorial de instalação  
 
 ### 🎁 Primeiros 20 clientes ganham:
-- 📹 Acesso ao grupo VIP de suporte
 - 🛠️ Instalação gratuita no primeiro servidor
-- 📚 Pack com 10 templates de mensagens prontos
 
 ## 📞 Compre Agora
 
