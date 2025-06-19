@@ -1,6 +1,7 @@
 <?php
 /**
- * API Protegida V3 - Ebyte Manager com Autenticação por Token
+ * API Protegida V3.1 - Ebyte Manager
+ * Compatível com Evolution API Full e Lite
  * Copyright (c) 2025
  */
 
@@ -23,7 +24,7 @@ if (!defined('CONFIG_LOADED') || !LicenseManager::validate()) {
 
 // Headers JSON
 header('Content-Type: application/json');
-header('X-API-Version: 3.0.0');
+header('X-API-Version: 3.1.0');
 
 // Rate limiting simples
 session_start();
@@ -89,11 +90,11 @@ try {
         case 'test':
             $result = [
                 'success' => true, 
-                'message' => 'API V3 funcionando corretamente!',
+                'message' => 'API V3.1 funcionando corretamente!',
                 'timestamp' => date('Y-m-d H:i:s'),
                 'licensed' => true,
-                'version' => '3.0.0',
-                'features' => ['token_auth' => true]
+                'version' => '3.1.0',
+                'features' => ['token_auth' => true, 'evolution_lite_support' => true]
             ];
             break;
             
@@ -161,7 +162,33 @@ try {
 exit;
 
 // ============================================
-// NOVA FUNÇÃO: Validação de Instância e Token
+// FUNÇÃO: Detecta versão da Evolution API
+// ============================================
+function detectEvolutionVersion() {
+    static $version = null;
+    
+    if ($version !== null) {
+        return $version;
+    }
+    
+    try {
+        $response = makeAPIRequest("/", 'GET');
+        if ($response && isset($response['clientName'])) {
+            $version = $response['clientName'] === 'evolution_lite' ? 'lite' : 'full';
+            $_SESSION['evolution_version'] = $version;
+        } else {
+            $version = $_SESSION['evolution_version'] ?? 'full';
+        }
+    } catch (Exception $e) {
+        $version = 'full'; // Default
+    }
+    
+    writeLog("Evolution API detectada: $version", 'INFO');
+    return $version;
+}
+
+// ============================================
+// FUNÇÕES AJUSTADAS PARA COMPATIBILIDADE
 // ============================================
 
 function handleValidateInstance($input) {
@@ -207,7 +234,7 @@ function handleValidateInstance($input) {
             ];
         }
         
-        // Armazena token validado na sessão para uso posterior
+        // Armazena token validado na sessão
         $_SESSION['validated_instances'][$instance] = [
             'token' => $token,
             'validated_at' => time(),
@@ -216,12 +243,15 @@ function handleValidateInstance($input) {
         
         writeLog("Instância validada com sucesso: $instance", 'SUCCESS');
         
+        // Normaliza o campo de status para compatibilidade
+        $state = $instanceData['state'] ?? $instanceData['connectionStatus'] ?? 'unknown';
+        
         return [
             'success' => true,
             'message' => 'Instância e token validados com sucesso',
             'instance_data' => [
                 'name' => $instanceData['name'] ?? $instance,
-                'state' => $instanceData['state'] ?? 'unknown',
+                'state' => $state,
                 'profileName' => $instanceData['profileName'] ?? null,
                 'profilePicUrl' => $instanceData['profilePicUrl'] ?? null
             ]
@@ -235,30 +265,6 @@ function handleValidateInstance($input) {
         ];
     }
 }
-
-// ============================================
-// FUNÇÃO AUXILIAR: Obter Token Validado
-// ============================================
-
-function getValidatedToken($instance) {
-    if (!isset($_SESSION['validated_instances'][$instance])) {
-        return null;
-    }
-    
-    $validation = $_SESSION['validated_instances'][$instance];
-    
-    // Verifica se ainda está válido
-    if (time() > $validation['expires_at']) {
-        unset($_SESSION['validated_instances'][$instance]);
-        return null;
-    }
-    
-    return $validation['token'];
-}
-
-// ============================================
-// FUNÇÕES MODIFICADAS PARA USAR TOKEN
-// ============================================
 
 function handleGenerateQR($input) {
     $instance = sanitizeInput($input['instance'] ?? '');
@@ -292,13 +298,18 @@ function handleGenerateQR($input) {
             return ['success' => false, 'message' => 'Erro ao conectar com a API'];
         }
 
-        if (!isset($response['code'])) {
+        // O QR Code pode estar em 'code' ou 'base64'
+        // Evolution Lite retorna ambos os campos conforme visto no debug
+        if (!isset($response['code']) && !isset($response['base64'])) {
             return ['success' => false, 'message' => 'QR Code não disponível'];
         }
 
+        // Prefere o campo 'code' que é o padrão
+        $qrCode = $response['code'] ?? $response['base64'] ?? null;
+        
         return [
             'success' => true,
-            'code' => $response['code'],
+            'code' => $qrCode,
             'already_connected' => false
         ];
 
@@ -372,6 +383,11 @@ function handleFetchInstanceInfo($input) {
         
         // Adiciona o token à resposta para que o frontend possa armazená-lo
         $instanceInfo['token'] = $token;
+        
+        // Normaliza o campo de status para compatibilidade
+        if (!isset($instanceInfo['state']) && isset($instanceInfo['connectionStatus'])) {
+            $instanceInfo['state'] = $instanceInfo['connectionStatus'];
+        }
 
         return [
             'success' => true,
@@ -526,7 +542,27 @@ function handleSendMedia($input) {
 }
 
 // ============================================
-// FUNÇÃO MODIFICADA: makeAPIRequest com Token
+// FUNÇÃO AUXILIAR: Obter Token Validado
+// ============================================
+
+function getValidatedToken($instance) {
+    if (!isset($_SESSION['validated_instances'][$instance])) {
+        return null;
+    }
+    
+    $validation = $_SESSION['validated_instances'][$instance];
+    
+    // Verifica se ainda está válido
+    if (time() > $validation['expires_at']) {
+        unset($_SESSION['validated_instances'][$instance]);
+        return null;
+    }
+    
+    return $validation['token'];
+}
+
+// ============================================
+// FUNÇÃO: makeAPIRequest com Token
 // ============================================
 
 function makeAPIRequest($endpoint, $method = 'GET', $data = null, $token = null) {
