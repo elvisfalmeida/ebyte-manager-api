@@ -61,9 +61,7 @@ O Manager oficial da Evolution API requer a API Key global (administrativa) para
 ## 📸 Screenshots
 
 ### Tela de Login
-<img src="https://github.com/elvisfalmeida/ebyte-manager-api/tree/main/assets/login-screen.png" alt="Login Screen" width="600">
-
-ebyte-manager-api/tree/main/assets
+![Login Screen](assets/login-screen.png)
 
 - Landing page profissional com hero section
 - Formulário elegante com validação em tempo real
@@ -71,7 +69,7 @@ ebyte-manager-api/tree/main/assets
 - Informações do produto em destaque
 
 ### Dashboard
-<img src="https://github.com/elvisfalmeida/ebyte-manager-api/tree/main/assets/dashboard-screen.png" alt="Dashboard" width="600">
+![Dashboard](assets/dashboard-screen.png)
 
 - Cards de estatísticas coloridos e interativos
 - Perfil do usuário com avatar e status
@@ -79,7 +77,7 @@ ebyte-manager-api/tree/main/assets
 - Logs do sistema ocultáveis (badge com contador)
 
 ### Central de Ajuda
-<img src="https://github.com/elvisfalmeida/ebyte-manager-api/tree/main/assets/help-center.png" alt="Help Center" width="600">
+![Help Center](assets/help-center.png)
 
 - Modal elegante com sistema de abas
 - Visualização segura de credenciais
