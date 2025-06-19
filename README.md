@@ -108,8 +108,8 @@ O sistema detecta automaticamente a versão da Evolution API e se adapta para fu
 
 1. **Clone ou extraia os arquivos**
    ```bash
-   git clone https://github.com/seu-usuario/ebyte-manager-v4.git
-   cd ebyte-manager-v4
+   git clone https://github.com/elvisfalmeida/ebyte-manager-api.git
+   cd ebyte-manager-api
    ```
 
 2. **Configure o arquivo .env**
