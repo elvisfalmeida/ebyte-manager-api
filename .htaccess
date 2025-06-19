@@ -1,5 +1,4 @@
-# .htaccess simplificado para desenvolvimento no XAMPP
-# Renomeie este arquivo para .htaccess durante o desenvolvimento
+# .htaccess simplificado para proteger os arquivos importantes
 
 # Proteção básica de arquivos sensíveis
 <Files "config.php">
@@ -7,6 +6,10 @@
 </Files>
 
 <Files ".env">
+    Require all denied
+</Files>
+
+<Files "license-manager.php">
     Require all denied
 </Files>
 
