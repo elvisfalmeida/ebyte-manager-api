@@ -1,7 +1,7 @@
 <?php
 /**
- * Ebyte Manager V2 - Sistema de Licença Protegido
- * Copyright (c) 2024 Ebyte Soluções
+ * Ebyte Manager V4 - Sistema de Licença Protegido
+ * Copyright (c) 2025 Ebyte Soluções | Elvis Almeida
  * 
  * AVISO: Modificar este arquivo resultará em mau funcionamento do sistema
  */
