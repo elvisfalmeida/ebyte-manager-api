@@ -1,7 +1,7 @@
 # Ebyte Manager V4 - WhatsApp Business SaaS
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-4.0.0-gradient.svg" alt="Version">
+  <img src="https://img.shields.io/badge/version-4.1.0-gradient.svg" alt="Version">
   <img src="https://img.shields.io/badge/php-%3E%3D7.4-8892BF.svg" alt="PHP Version">
   <img src="https://img.shields.io/badge/bootstrap-5.3.2-7952B3.svg" alt="Bootstrap">
   <img src="https://img.shields.io/badge/license-Proprietary-red.svg" alt="License">
@@ -9,68 +9,99 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Design-SaaS_Ready-blueviolet.svg" alt="SaaS">
+  <img src="https://img.shields.io/badge/Evolution_V2-Compatible-success.svg" alt="Evolution V2">
+  <img src="https://img.shields.io/badge/Evolution_Lite-Compatible-success.svg" alt="Evolution Lite">
+  <img src="https://img.shields.io/badge/SaaS-Multi_Tenant-blueviolet.svg" alt="Multi-tenant">
   <img src="https://img.shields.io/badge/Security-Token_Auth-orange.svg" alt="Security">
-  <img src="https://img.shields.io/badge/UI-Modern_&_Responsive-ff69b4.svg" alt="UI">
 </p>
 
 ## 🚀 Sobre o Ebyte Manager V4
 
-O **Ebyte Manager V4** representa uma evolução completa do sistema, transformando-se em uma solução **SaaS profissional** para gerenciamento de WhatsApp Business. Esta versão foi totalmente redesenhada com foco em:
+O **Ebyte Manager V4** é uma solução **SaaS profissional** que permite aos provedores oferecer WhatsApp Business as a Service (WBaaS) de forma segura e escalável. Desenvolvido para resolver a limitação do Manager oficial da Evolution API que requer acesso administrativo global, nosso sistema permite que cada cliente acesse apenas sua própria instância usando autenticação por token.
 
-- 🎨 **Interface SaaS Moderna** - Design profissional digno de produtos enterprise
-- 🔐 **Autenticação por Token** - Segurança de nível bancário
-- 💼 **Linguagem Comercial** - Pronto para uso por clientes finais
-- ⚡ **Performance Otimizada** - Carregamento instantâneo e animações fluidas
+### 🎯 Por que o Ebyte Manager foi criado?
 
-## ✨ Principais Novidades da V4
+O Manager oficial da Evolution API requer a API Key global (administrativa) para acesso, o que:
+- ❌ Expõe todas as instâncias para qualquer usuário
+- ❌ Impossibilita a revenda como SaaS/Whitelabel
+- ❌ Cria riscos de segurança graves
+- ❌ Não permite isolamento entre clientes
 
-### 🎯 Transformação Total
-- **De ferramenta técnica → Produto SaaS comercial**
-- **De interface básica → Design premium com gradientes e animações**
-- **De autenticação simples → Sistema de token obrigatório**
-- **De logs técnicos → Central de ajuda integrada**
+**Nossa solução:**
+- ✅ Cada cliente acessa apenas sua instância
+- ✅ Autenticação segura por token individual
+- ✅ Isolamento total entre clientes
+- ✅ Pronto para Whitelabel e revenda
+- ✅ Interface 100% comercial (sem termos técnicos)
 
-### 🛡️ Segurança Revolucionária
-- **Autenticação dupla** (Identificador + Token)
-- **Validação server-side** de todas as credenciais
+## ✨ Principais Características
+
+### 🔐 Segurança Enterprise
+- **Autenticação dupla obrigatória** (Identificador + Token único)
+- **Validação server-side** em todas as operações
 - **Sessão criptografada** com expiração automática
-- **Proteção contra força bruta** e tentativas maliciosas
+- **Rate limiting** para proteção contra ataques
+- **Isolamento total** entre instâncias
 
-### 🎨 Interface Completamente Nova
-- **Hero Section** com gradientes animados
-- **Cards interativos** com efeitos hover 3D
-- **Animações suaves** em todas as transições
-- **Dark/Light mode** com cores personalizáveis
-- **100% responsivo** com mobile-first
+### 🎨 Interface Premium SaaS
+- **Design moderno** com gradientes e animações profissionais
+- **100% responsivo** - Mobile-first
+- **Dark/Light mode** automático
+- **Linguagem comercial** - Sem termos técnicos
+- **Central de ajuda** integrada
+- **Logs opcionais** (podem ser ocultados)
+
+### ⚡ Performance e Compatibilidade
+- **Detecção automática** da versão Evolution API
+- **Suporte completo** para Evolution V2 e Lite
+- **Normalização de dados** entre versões
+- **Carregamento instantâneo**
+- **Animações fluidas** sem travamentos
 
 ## 📸 Screenshots
 
 ### Tela de Login
-- Design de landing page profissional
+<img src="https://github.com/user-attachments/assets/login-screen.png" alt="Login Screen" width="600">
+
+- Landing page profissional com hero section
 - Formulário elegante com validação em tempo real
-- Informações do produto destacadas
-- Elementos flutuantes animados
+- Elementos visuais animados e gradientes modernos
+- Informações do produto em destaque
 
 ### Dashboard
+<img src="https://github.com/user-attachments/assets/dashboard-screen.png" alt="Dashboard" width="600">
+
 - Cards de estatísticas coloridos e interativos
-- Perfil do usuário em destaque
-- Ações rápidas com ícones grandes
-- Logs em tempo real (ocultável)
+- Perfil do usuário com avatar e status
+- Ações rápidas com ícones intuitivos
+- Logs do sistema ocultáveis (badge com contador)
 
 ### Central de Ajuda
-- Modal elegante com abas
-- Visualização segura de credenciais
-- Links diretos para suporte
-- Informações de contato personalizáveis
+<img src="https://github.com/user-attachments/assets/help-center.png" alt="Help Center" width="600">
 
-## 🔧 Instalação
+- Modal elegante com sistema de abas
+- Visualização segura de credenciais
+- Canais de suporte integrados
+- Horário de atendimento personalizado
+
+## 🔧 Compatibilidade
+
+### ✅ Versões Suportadas
+- **Evolution API V2** (2.2.3) - Suporte completo
+- **Evolution API Lite** (2.2.1) - Suporte completo
+
+### ❌ Versões Não Suportadas
+- **Evolution API V1** (1.8.2 e anteriores) - API muito limitada
+
+O sistema detecta automaticamente a versão da Evolution API e se adapta para funcionar perfeitamente!
+
+## 🛠️ Instalação
 
 ### Requisitos
 - PHP >= 7.4
 - Servidor Web (Apache/Nginx)
 - Extensão cURL habilitada
-- Evolution API configurada
+- Evolution API V2 ou Lite configurada
 - SSL recomendado para produção
 
 ### Passo a Passo
@@ -89,9 +120,9 @@ O **Ebyte Manager V4** representa uma evolução completa do sistema, transforma
 
 3. **Personalize suas configurações**
    ```env
-   # API Evolution
+   # API Evolution (V2 ou Lite)
    API_URL=https://sua-evolution-api.com
-   API_KEY=chave-administrativa
+   API_KEY=sua-chave-global-admin
    
    # Identidade Visual
    PRIMARY_COLOR=#7341ff
@@ -106,7 +137,7 @@ O **Ebyte Manager V4** representa uma evolução completa do sistema, transforma
    
    # Branding
    APP_NAME=Sua Empresa WhatsApp
-   APP_VERSION=4.0.0
+   APP_VERSION=4.1.0
    ```
 
 4. **Ative sua licença**
@@ -120,48 +151,44 @@ O **Ebyte Manager V4** representa uma evolução completa do sistema, transforma
    chmod 644 .htaccess
    ```
 
+6. **Remova o instalador**
+   ```bash
+   rm install.php
+   ```
+
 ## 📱 Como Funciona
-
-### Para o Cliente Final
-
-1. **Acesso Simples**
-   - Cliente recebe credenciais por email/WhatsApp
-   - Acessa o painel com Identificador + Chave
-   - Interface intuitiva sem termos técnicos
-
-2. **Conexão Facilitada**
-   - QR Code grande e centralizado
-   - Instruções passo a passo ilustradas
-   - Feedback visual em cada etapa
-
-3. **Uso Profissional**
-   - Envio de mensagens em massa
-   - Suporte a mídia (imagens, vídeos, PDFs)
-   - Intervalos inteligentes anti-spam
-   - Logs opcionais para acompanhamento
 
 ### Para o Administrador SaaS
 
-1. **Deploy Rápido**
-   - Configure uma vez, use para múltiplos clientes
-   - Personalize cores e logos via .env
-   - Sem necessidade de alterar código
+1. **Criar instâncias via Evolution API**
+   - Use a API Key global para criar instâncias
+   - Cada instância recebe um token único
+   - Envie credenciais aos clientes
 
-2. **Gestão Simplificada**
-   - Cada cliente com suas próprias credenciais
-   - Isolamento total entre instâncias
-   - Logs centralizados por cliente
+2. **Gestão de clientes**
+   - Cada cliente acessa apenas sua instância
+   - Isolamento total entre clientes
+   - Logs centralizados por instância
 
-3. **Suporte Integrado**
-   - Informações de contato no sistema
-   - Cliente nunca precisa saber sobre Evolution API
-   - Reduz tickets de suporte
+### Para o Cliente Final
 
-## 🎨 Personalização Avançada
+1. **Acesso simplificado**
+   - Recebe credenciais (Identificador + Chave)
+   - Acessa o painel personalizado
+   - Interface 100% comercial
+
+2. **Recursos disponíveis**
+   - Conexão do WhatsApp via QR Code
+   - Envio de mensagens em massa
+   - Suporte a mídia (imagens, vídeos, PDFs, áudios)
+   - Intervalos inteligentes anti-spam
+   - Central de ajuda integrada
+
+## 🎨 Personalização
 
 ### Cores e Temas
+O sistema permite personalização completa via `.env`:
 ```env
-# Cores principais (aceita qualquer cor hex)
 PRIMARY_COLOR=#FF5722  # Laranja vibrante
 PRIMARY_COLOR=#4CAF50  # Verde moderno
 PRIMARY_COLOR=#2196F3  # Azul profissional
@@ -169,113 +196,128 @@ PRIMARY_COLOR=#9C27B0  # Roxo elegante
 ```
 
 ### Logos e Branding
-- **Logos separados** para tema claro/escuro
-- **Favicon personalizado** para identidade completa
-- **Nome da empresa** em toda interface
+- Logos separados para tema claro/escuro
+- Favicon personalizado
+- Nome da empresa em toda interface
+- Informações de suporte customizáveis
 
-### Mensagens e Idioma
-- Todas as mensagens são **comerciais e amigáveis**
-- Sem menções a "API", "Evolution" ou termos técnicos
-- Focado na experiência do usuário final
-
-## 📊 Arquitetura V4
+## 📊 Arquitetura do Sistema
 
 ```
 ebyte-manager-v4/
 ├── 📁 assets/
 │   └── 📁 js/
-│       ├── 📄 app-v4.js       # Core do sistema com logs
+│       ├── 📄 app-v4.js       # Core do sistema
 │       └── 📄 modal-v3.js     # Sistema de modais
 ├── 📁 logs/                   # Logs do sistema
 ├── 📄 .env.example           # Template de configuração
 ├── 📄 .htaccess              # Segurança Apache
-├── 📄 api.php                # API v3 com token auth
+├── 📄 api.php                # API v4.1 universal
 ├── 📄 config.php             # Configurações centralizadas
-├── 📄 index.php              # Interface SaaS moderna
-├── 📄 install.php            # Instalador inteligente
+├── 📄 index.php              # Interface SaaS
+├── 📄 install.php            # Instalador
 ├── 📄 license-manager.php    # Sistema de licenças
 └── 📄 README.md              # Este arquivo
 ```
 
-## 🔐 Segurança Aprimorada
+## 🔐 Segurança Implementada
 
-### Autenticação por Token
-- ✅ **Validação obrigatória** antes de qualquer operação
-- ✅ **Token único** por instância
-- ✅ **Sessão temporária** com expiração
-- ✅ **Proteção CSRF** em todas as requisições
+### Autenticação
+- ✅ Token obrigatório para todas as operações
+- ✅ Validação dupla (identificador + token)
+- ✅ Sessões com expiração automática
+- ✅ Proteção CSRF em todas as requisições
 
-### Proteções Implementadas
-- 🛡️ Rate limiting inteligente
-- 🛡️ Sanitização completa de inputs
+### Proteções
+- 🛡️ Rate limiting (1000 req/hora)
+- 🛡️ Sanitização de inputs
 - 🛡️ Headers de segurança modernos
-- 🛡️ Logs de auditoria detalhados
+- 🛡️ Logs de auditoria
+- 🛡️ Isolamento entre instâncias
 
 ## 📈 Comparação de Versões
 
-| Feature | V2.2.2 | V3.0.0 | V4.0.0 |
-|---------|---------|---------|---------|
-| Design | Básico | Melhorado | **SaaS Premium** |
-| Autenticação | Nome apenas | Token opcional | **Token obrigatório** |
-| Interface | Técnica | Semi-técnica | **100% Comercial** |
-| Logs | Sempre visível | Sempre visível | **Ocultável** |
-| Suporte | Externo | Externo | **Integrado** |
-| Animações | Poucas | Médias | **Profissionais** |
-| Responsivo | Sim | Sim | **Mobile-first** |
-| Tema Dark | Sim | Sim | **Aprimorado** |
-| Personalização | Limitada | Média | **Total via .env** |
+| Feature | Manager Oficial | Ebyte Manager V4 |
+|---------|----------------|------------------|
+| Autenticação | API Key Global | Token por Instância |
+| Acesso | Todas instâncias | Uma instância |
+| Multi-tenant | ❌ Não | ✅ Sim |
+| Whitelabel | ❌ Impossível | ✅ Total |
+| Interface | Técnica | 100% Comercial |
+| Segurança | Risco alto | Isolamento total |
+| Personalização | Limitada | Total via .env |
+| Suporte Evolution V2 | ✅ Sim | ✅ Sim |
+| Suporte Evolution Lite | ✅ Sim | ✅ Sim |
 
-## 🚀 Roadmap Futuro
+## 🚀 Casos de Uso
 
-- [ ] Dashboard analytics avançado
-- [ ] Agendamento de mensagens
-- [ ] Templates de mensagens
-- [ ] API REST para integrações
-- [ ] Multi-idioma (PT/EN/ES)
-- [ ] Webhook notifications
-- [ ] Backup automático
+### 1. Provedor SaaS de WhatsApp
+- Ofereça WhatsApp Business as a Service
+- Cobrança por instância
+- Gestão centralizada
+- Suporte integrado
+
+### 2. Agência Digital
+- Gerencie WhatsApp de múltiplos clientes
+- Interface personalizada por cliente
+- Relatórios e analytics
+- Automação de campanhas
+
+### 3. Empresa com Múltiplas Filiais
+- Uma instância por filial
+- Gestão descentralizada
+- Controle central
+- Padronização de processos
 
 ## 🐛 Solução de Problemas
 
 ### "Credenciais inválidas"
-- Verifique se está usando o identificador correto (case-sensitive)
-- Confirme se o token está completo e sem espaços
-- Token é único por instância na Evolution API
+- Verifique o identificador (case-sensitive)
+- Confirme o token completo sem espaços
+- Token é único por instância
 
-### Logs não aparecem
-- Clique no ícone de terminal na navbar
-- Verifique se `ENABLE_LOGS=true` no .env
-- Permissões de escrita na pasta logs/
+### Erro de conexão com Evolution API
+- Verifique a URL da API no .env
+- Confirme se a API está acessível
+- Teste com curl diretamente
 
-### Personalização não funciona
-- Limpe o cache do navegador (Ctrl+F5)
-- Verifique sintaxe do .env (sem aspas em cores)
+### Personalização não aparece
+- Limpe cache do navegador (Ctrl+F5)
+- Verifique sintaxe do .env
 - URLs de imagens devem ser HTTPS
 
-## 🤝 Suporte Premium
-
-### Para Clientes Finais
-- Use a **Central de Ajuda** no sistema
-- Canais de contato personalizados
-- Sem necessidade de conhecimento técnico
+## 🤝 Suporte
 
 ### Para Administradores
 - 📧 **E-mail**: contato@ebyte.net.br
 - 💬 **WhatsApp**: +55 11 96391-8906
 - 🌐 **Site**: https://ebyte.net.br
 
-## 📝 Changelog Completo
+### Para Clientes Finais
+Configure os canais de suporte no `.env` para que apareçam na Central de Ajuda do sistema.
+
+## 📝 Changelog
+
+### [4.1.0] - 2025-06-18
+#### 🎉 Compatibilidade Universal
+- ✅ Suporte completo para Evolution V2 (2.2.3)
+- ✅ Suporte completo para Evolution Lite (2.2.1)
+- ✅ Detecção automática de versão
+- ✅ Normalização de campos entre versões
+- 🔧 Correção de recursão infinita na API
+- 🔧 Melhorias na gestão de sessão
+- 📝 Documentação atualizada
 
 ### [4.0.0] - 2025-06-16
-#### 🎉 Versão SaaS - Reescrita Total
-- 🎨 **Novo Design**: Interface premium com gradientes e animações
-- 🔐 **Token Auth**: Segurança obrigatória em todas operações
-- 💼 **Linguagem Comercial**: Removidos todos termos técnicos
-- 📱 **Mobile First**: Experiência perfeita em qualquer dispositivo
-- 🎯 **UX Melhorada**: Fluxos simplificados e intuitivos
-- 📊 **Logs Inteligentes**: Sistema ocultável com badges
-- 🛠️ **Central de Ajuda**: Suporte integrado com modal elegante
-- 🎨 **Personalização Total**: Tudo configurável via .env
+#### 🚀 Versão SaaS - Lançamento
+- 🎨 Interface premium com gradientes e animações
+- 🔐 Autenticação por token obrigatória
+- 💼 Linguagem 100% comercial
+- 📱 Mobile-first responsivo
+- 🎯 UX otimizada para usuários não-técnicos
+- 📊 Sistema de logs ocultável
+- 🛠️ Central de ajuda integrada
+- 🎨 Personalização total via .env
 
 ### [3.0.0] - 2025-06-15
 #### 🔒 Segurança e Autenticação
@@ -312,8 +354,8 @@ Este software é **proprietário** e protegido por direitos autorais.
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Ebyte_Manager_V4-Premium_SaaS_Solution-gradient.svg" alt="Ebyte Manager V4"><br>
-  <strong>Sistema Profissional para WhatsApp Business</strong><br>
+  <img src="https://img.shields.io/badge/Ebyte_Manager_V4-Enterprise_WhatsApp_Solution-gradient.svg" alt="Ebyte Manager V4"><br>
+  <strong>A Solução Definitiva para WhatsApp Business as a Service</strong><br>
   Desenvolvido com 💜 por <a href="https://github.com/elvisfalmeida">Elvis Almeida</a><br>
   © 2025 Ebyte Soluções - Todos os direitos reservados
 </p>
