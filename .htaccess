@@ -1,0 +1,22 @@
+# .htaccess simplificado para desenvolvimento no XAMPP
+# Renomeie este arquivo para .htaccess durante o desenvolvimento
+
+# Proteção básica de arquivos sensíveis
+<Files "config.php">
+    Require all denied
+</Files>
+
+<Files ".env">
+    Require all denied
+</Files>
+
+# Proteção de arquivos de log
+<FilesMatch "\.(log|txt)$">
+    Require all denied
+</FilesMatch>
+
+# Desabilita listagem de diretórios
+Options -Indexes
+
+# Página de erro personalizada (opcional)
+# ErrorDocument 404 /evo/index.php
